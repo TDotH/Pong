@@ -22,3 +22,7 @@ lib/libpng16-16.dll
 lib/zlib1.dll
 
 obj/Debug/sources/pong.o
+
+Pong.layout
+
+obj/Debug/sources/LTexture.o
