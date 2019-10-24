@@ -4,6 +4,10 @@
 #include <SDL.h>
 #include "LTexture.h"
 
+extern std::random_device rd;
+extern std::mt19937  mt;
+extern std::uniform_int_distribution<int> startDist;
+
 class Ball {
 
   public:
@@ -25,6 +29,7 @@ class Ball {
       void resetPos( int posX, int posY, int velX, int velY );
 
       int getPosY() { return mPosY; };
+      int getPosX() { return mPosX; };
 
       bool getGoalFlag() { return goal; };
 

@@ -4,6 +4,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
+#include <random>
+#include <chrono>
 
 //Window constraints
 const int WINDOW_WIDTH = 640;

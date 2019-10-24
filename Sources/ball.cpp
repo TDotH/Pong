@@ -34,9 +34,15 @@ void Ball::move( SDL_Rect a, SDL_Rect b) {
         mPosX -= mVelX;
 
         //Increase and flip ball's velocity
-        mVelX += ( mVelX > 0 ) ? .01 : -.01;
-        mVelY += ( mVelY > 0 ) ? .01 : -.01;
+        mVelX += ( mVelX > 0 ) ? 1 : -1;
+        mVelY += ( mVelY > 0 ) ? 1 : -1;
         mVelX = -mVelX;
+
+        //Check if ball has any y velocity
+        if( mVelY == 0 ) {
+
+            mVelY = startDist( mt );
+        }
     }
 
     //Upper and lower bound collisions
@@ -55,13 +61,15 @@ void Ball::move( SDL_Rect a, SDL_Rect b) {
         //Set goal flag
         goal = true;
 
+        /*
+
         //Move back( or forward )
         mPosX -= mVelX;
 
         //Increase and flip ball's velocity
         mVelX += ( mVelX > 0 ) ? 1 : -1;
         mVelY += ( mVelY > 0 ) ? 1 : -1;
-        mVelX = -mVelX;
+        mVelX = -mVelX;*/
     }
 
     return;

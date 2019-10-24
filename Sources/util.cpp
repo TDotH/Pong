@@ -5,6 +5,11 @@
 SDL_Window * gWindow;
 SDL_Renderer * gRenderer;
 
+//Random engine for ball angles
+std::random_device rd;
+std::mt19937  mt( time( 0 ) );
+std::uniform_int_distribution<int> startDist( -1, 1 );
+
 void initSDL() {
 
     if ( SDL_Init( SDL_INIT_VIDEO ) != 0 ) {
