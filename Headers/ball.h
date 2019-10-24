@@ -3,10 +3,6 @@
 
 #include <SDL.h>
 #include "LTexture.h"
-#include "util.h"
-
-extern static int WINDOW_WIDTH;
-extern static int WINDOW_HEIGHT;
 
 class Ball {
 
@@ -16,11 +12,11 @@ class Ball {
       ~Ball();
 
       //The dimensions of the ball
-      static const int BALL_WIDTH = 20;
-      static const int BALL_HEIGHT = 20;
+      static const int BALL_WIDTH = 10;
+      static const int BALL_HEIGHT = 10;
 
       //Moves the dot and checks for collisions
-      void move();
+      void move( SDL_Rect a, SDL_Rect b);
 
       //Shows dot on the screen
       void render();
@@ -28,12 +24,19 @@ class Ball {
       //Resets ball position and velocity
       void resetPos( int posX, int posY, int velX, int velY );
 
+      int getPosY() { return mPosY; };
+
+      bool getGoalFlag() { return goal; };
+
   private:
       //The X and Y offsets of the ball
       int mPosX, mPosY;
 
       //The velocity of the dot
-      int mVelX, mVelY
+      int mVelX, mVelY;
+
+      //Image location of ball
+      const char* image = "ball.png";
 
       //Ball's texture
       LTexture ballTexture;
@@ -41,6 +44,8 @@ class Ball {
       //Ball's collision box
       SDL_Rect mCollider;
 
+      //Score flag
+      bool goal;
 };
 
 

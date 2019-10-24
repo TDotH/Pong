@@ -26,3 +26,15 @@ obj/Debug/sources/pong.o
 Pong.layout
 
 obj/Debug/sources/LTexture.o
+
+ball.png
+
+bin/Debug/paddle.png
+
+obj/Debug/sources/ball.o
+
+obj/Debug/sources/paddle.o
+
+obj/Debug/sources/util.o
+
+paddle.png

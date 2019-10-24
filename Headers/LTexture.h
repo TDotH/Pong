@@ -19,7 +19,7 @@ class LTexture {
     void render( int x, int y );
 
     //Creates texture from simple RGB Surface
-    void createTexture( int mWidth, int mHeight );
+    void createTexture( int aWidth, int aHeight, const char* objName );
 
     //Getters
     int getWidth()  { return mWidth; };
